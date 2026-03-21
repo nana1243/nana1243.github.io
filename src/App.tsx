@@ -3,6 +3,7 @@ import Information from "./components/information";
 import Contact from "./components/contact";
 import Attendance from "./components/attendance";
 import Gallery from "./components/gallery";
+import Location from "./components/location";
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
             <Contact/>
             <Attendance/>
             <Gallery/>
+            <Location/>
         </>
     )
 }
