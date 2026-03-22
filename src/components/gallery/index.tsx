@@ -21,11 +21,11 @@ const Gallery = () => {
     const [index, setIndex] = useState(0);
 
     return (
-        <div style={{backgroundColor: '#f0f0f0'}}>
+        <div className={styles.container}>
             <img
                 src={gallery}
                 alt="gallery"/>
-            <div className={styles.container}>
+            <div className={styles.imageContainer}>
                 {images.map((img, index) => (
                     <div key={index} className={styles.imageWrapper}
                          onClick={(e) => {
