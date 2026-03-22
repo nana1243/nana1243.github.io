@@ -1,19 +1,25 @@
 import styles from './index.module.css'
 import Typography from "@mui/material/Typography";
 import WeddingMap from "../map/index";
+import {LOCATION, LOCATION_CONTACT} from "../../constants/location";
+import locationImg from '@/assets/image/location.png';
+
 
 const Location = () => {
     return (
         <>
             <div style={{backgroundColor: '#f0f0f0'}}>
                 <div className={styles.container}>
-                    <Typography variant="h3" color='textSecondary'>Location</Typography>
-                    <p>
-                        마곡 코트야드 메리어트 포레스트 볼룸
+                    <img src={locationImg} alt="location"/>
+                    {/*<Typography variant="h3" color='textSecondary'>Location</Typography>*/}
+                    <p className={styles.location}>
+                        {LOCATION}
                     </p>
-                    <p>
-                        서울 강서구 마곡중앙12로 10
-                        02-6946-7000
+                    <p className={styles.locationDetail}>
+                        {LOCATION_CONTACT.address}
+                    </p>
+                    <p className={styles.locationDetail}>
+                        {LOCATION_CONTACT.phoneNumber}
                     </p>
                     <WeddingMap/>
                 </div>
