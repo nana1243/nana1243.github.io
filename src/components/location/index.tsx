@@ -11,7 +11,6 @@ const Location = () => {
             <div style={{backgroundColor: '#f0f0f0'}}>
                 <div className={styles.container}>
                     <img src={locationImg} alt="location"/>
-                    {/*<Typography variant="h3" color='textSecondary'>Location</Typography>*/}
                     <p className={styles.location}>
                         {LOCATION}
                     </p>

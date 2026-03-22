@@ -4,7 +4,6 @@
     grid-template-columns: repeat(3, 1fr); /* 3개의 동일한 열 */
     gap: 15px; /* 이미지 사이 간격 */
     max-width: 900px;
-    padding-top: 100px;
     margin: auto;
 }
 

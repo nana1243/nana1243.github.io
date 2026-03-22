@@ -7,6 +7,7 @@ import image6 from '../../assets/image/image6.png';
 import image7 from '../../assets/image/image7.png';
 import image8 from '../../assets/image/image8.png';
 import image9 from '../../assets/image/image9.png';
+import gallery from '@/assets/image/gallery.png';
 
 import styles from './index.module.css';
 import Lightbox from 'yet-another-react-lightbox';
@@ -21,13 +22,15 @@ const Gallery = () => {
 
     return (
         <div style={{backgroundColor: '#f0f0f0'}}>
+            <img
+                src={gallery}
+                alt="gallery"/>
             <div className={styles.container}>
                 {images.map((img, index) => (
                     <div key={index} className={styles.imageWrapper}
                          onClick={(e) => {
                              setIndex(index);
                              setOpen(true);
-
                          }}
 
                     >
