@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Stack from '@mui/material/Stack'; // 버튼 간격을 위해 추천
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import Navi from "../navi";
 
 const Location = () => {
     return (
@@ -39,8 +40,8 @@ const Location = () => {
                         전화하기
                     </Button>
                 </Stack>
-
                 <WeddingMap/>
+                <Navi/>
             </div>
         </div>
     )
