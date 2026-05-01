@@ -8,9 +8,6 @@ const Greeting = () => {
     return (
         <div className={styles.container}>
             <div className={styles.imageAreaGuide}>
-                <div className={styles.audioPlayer}>
-                    <AudioPlayer/>
-                </div>
                 <img src={weddingBackground} alt="wedding background" className={styles.backgroundImage}/>
                 <div className={styles.nameOverlay}>
                     <span>이준서</span>

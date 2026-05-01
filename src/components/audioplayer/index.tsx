@@ -4,9 +4,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import SkipNextIcon from '@mui/icons-material/SkipNext';
 import PauseIcon from '@mui/icons-material/Pause';
 
 import audioFile from '@/assets/audio/blueming.mp3';
@@ -16,7 +14,6 @@ const AudioPlayer = () => {
     const theme = useTheme();
     const audioRef = useRef<HTMLAudioElement>(null);
     const [isPlaying, setIsPlaying] = useState(false);
-    // const [isMuted, setIsMuted] = useState(false);
 
     useEffect(() => {
         const audio = audioRef.current;
@@ -59,64 +56,32 @@ const AudioPlayer = () => {
         }
     };
 
-    /*const toggleMute = () => {
-        if (audioRef.current) {
-            audioRef.current.muted = !isMuted;
-            setIsMuted(!isMuted);
-        }
-    };*/
-
-
     return (
-        <Card
-            elevation={0}
-            sx={{
-                display: 'flex',
-                height: 80,
-                maxWidth: 350,
-                backgroundColor: 'transparent',
-                backdropFilter: 'blur(10px)',
-                backgroundImage: 'none',
-            }}
-        >
-            <audio ref={audioRef}
-                   src={audioFile}
-                   onLoadedData={() => {
-                       if (isPlaying && audioRef.current) {
-                           audioRef.current.play();
-                       }
-                   }}/>
-            <Box sx={{display: 'flex', flexDirection: 'column', flex: 1}}>
-                <CardContent sx={{flex: '1 0 auto', pt: 1, pb: 0, px: 2}}>
-                    <Typography variant="body1" fontWeight="bold" sx={{lineHeight: 1.2}}>
-                        Blueming
-                    </Typography>
-                    <Typography variant="caption" color="text.secondary">
-                        아이유
-                    </Typography>
-                </CardContent>
-                <Box sx={{display: 'flex', alignItems: 'center', pl: 1, pb: 0.5}}>
-                    <IconButton size="small" aria-label="previous">
-                        {theme.direction === 'rtl' ? <SkipNextIcon fontSize="small"/> :
-                            <SkipPreviousIcon fontSize="small"/>}
-                    </IconButton>
-                    <IconButton
-                        size="small"
-                        aria-label="play/pause"
-                        onClick={togglePlayPause}
-
-                    >
-                        {isPlaying ? <PauseIcon sx={{height: 28, width: 28}}/> :
-                            <PlayArrowIcon sx={{height: 28, width: 28}}/>}
-                    </IconButton>
-                    <IconButton size="small" aria-label="next">
-                        {theme.direction === 'rtl' ? <SkipPreviousIcon fontSize="small"/> :
-                            <SkipNextIcon fontSize="small"/>}
-                    </IconButton>
-                </Box>
+        <>
+            <audio
+                ref={audioRef}
+                src={audioFile}
+                onLoadedData={() => {
+                    if (isPlaying && audioRef.current) {
+                        audioRef.current.play();
+                    }
+                }}
+            />
+            <Box sx={{display: 'flex', alignItems: 'left', pl: 1, pb: 0.5}}>
+                <IconButton
+                    size="small"
+                    aria-label="play/pause"
+                    onClick={togglePlayPause}
+                    sx={{
+                        p: 1.5,
+                        backgroundColor: '#9E9E9E',
+                    }}
+                >
+                    {isPlaying ? <PauseIcon sx={{height: 28, width: 28}}/> :
+                        <PlayArrowIcon sx={{height: 28, width: 28}}/>}
+                </IconButton>
             </Box>
-
-        </Card>
+        </>
     );
 }
 export default AudioPlayer;
