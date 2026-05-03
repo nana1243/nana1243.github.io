@@ -8,12 +8,12 @@ const Layout = ({children}) => {
                 sx={{
                     position: 'fixed',
                     top: 0,
-                    left: 0,
+                    right: '20px',
                     width: '100%',
                     zIndex: 9999,
                     display: 'flex',
                     justifyContent: 'right',
-                    py: 1.5,
+                    py: 1.3,
                 }}
             >
                 <AudioPlayer/>

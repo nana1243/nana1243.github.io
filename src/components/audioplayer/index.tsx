@@ -73,7 +73,7 @@ const AudioPlayer = () => {
                     aria-label="play/pause"
                     onClick={togglePlayPause}
                     sx={{
-                        p: 1.5,
+                        p: 1,
                         backgroundColor: '#9E9E9E',
                     }}
                 >
