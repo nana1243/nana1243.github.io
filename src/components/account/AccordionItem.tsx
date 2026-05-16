@@ -32,7 +32,7 @@ const AccordionItem = ({type, title, accounts}: AccordionItemProps) => {
     };
 
 
-    const borderColor = expanded ? '#222222' : '#e5e5e5';
+    const borderColor = '#e5e5e5';
     const borderWidth = expanded ? '2px' : '1px';
 
     return (

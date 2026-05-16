@@ -20,14 +20,12 @@ const Account = () => {
             >
                 Account
             </Typography>
-            {/* 신랑측: 파란 테두리 (open) */}
             <AccordionItem
                 type="open"
                 title="신랑측 마음 전하실 곳"
                 accounts={ACCOUNT_DATA.groom}
             />
 
-            {/* 신부측: 회색 테두리 (closed) */}
             <AccordionItem
                 type="closed"
                 title="신부측 마음 전하실 곳"
