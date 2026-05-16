@@ -1,7 +1,6 @@
 import styles from './index.module.css';
 
 import weddingBackground from '@/assets/image/wedding_background.jpg';
-import AudioPlayer from "../audioplayer";
 
 
 const Greeting = () => {

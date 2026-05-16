@@ -5,6 +5,7 @@ import Attendance from "./components/attendance";
 import Gallery from "./components/gallery";
 import Location from "./components/location";
 import Layout from "./components/layout/Layout";
+import Account from "./components/account";
 
 function App() {
     return (
@@ -12,7 +13,8 @@ function App() {
             <Greeting/>
             <Information/>
             <Contact/>
-            <Attendance/>
+            {/*<Attendance/>*/}
+            <Account/>
             <Gallery/>
             <Location/>
         </Layout>
