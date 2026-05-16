@@ -3,6 +3,7 @@ import Typography from "@mui/material/Typography";
 import styles from './index.module.css';
 import Button from "@mui/material/Button";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import {useState} from "react";
 
 interface AccountInfo {
     bank: string;
@@ -17,21 +18,29 @@ interface AccordionItemProps {
 }
 
 const AccordionItem = ({type, title, accounts}: AccordionItemProps) => {
+    const [expanded, setExpanded] = useState<boolean>(type === 'open');
+
+
+    const handleChange = (event: React.SyntheticEvent, isExpanded: boolean) => {
+        setExpanded(isExpanded);
+    };
+
     const handleCopy = (text: string) => {
         navigator.clipboard.writeText(text)
             .then(() => alert('복사되었습니다!'))
             .catch((err) => console.error('복사 실패:', err));
     };
 
-    const isOpenType = type === 'open';
-    const borderColor = isOpenType ? '#2B66CC' : '#e0e0e0';
-    const borderWidth = isOpenType ? '2px' : '1px';
+
+    const borderColor = expanded ? '#222222' : '#e5e5e5';
+    const borderWidth = expanded ? '2px' : '1px';
 
     return (
         <Accordion
             disableGutters
             elevation={0}
-            defaultExpanded={isOpenType}
+            expanded={expanded}
+            onChange={handleChange}
             sx={{
                 width: '100%',
                 maxWidth: '450px',
@@ -41,7 +50,7 @@ const AccordionItem = ({type, title, accounts}: AccordionItemProps) => {
         >
             <AccordionSummary
                 expandIcon={
-                    <ExpandMoreIcon sx={{color: isOpenType ? '#2B66CC' : 'inherit'}}/>}
+                    <ExpandMoreIcon sx={{color: expanded ? '#2B66CC' : 'inherit'}}/>}
                 sx={{padding: '16px 24px'}}
             >
                 <Typography sx={{fontSize: '18px', fontWeight: 'bold', color: '#333'}}>
