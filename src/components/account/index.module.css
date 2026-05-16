@@ -1,13 +1,39 @@
 .container {
     width: 100%;
-    background-color: #f0f0f0;
+    background-color: #f9f9f9;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
     color: #666666;
     padding-top: 40px;
+    flex-direction: column;
+    padding-bottom: 30px;
 
 }
 
+/* 계좌 한 줄 레이아웃 */
+.accountRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+    width: 100%; /* 너비 확보 */
+}
 
+.accountRow:last-child {
+    border-bottom: none;
+}
+
+/* 계좌 정보 텍스트 정렬 */
+.accountInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* 은행 이름 간격만 유지 */
+.bankName {
+    color: #888888;
+    margin-right: 8px;
+}
