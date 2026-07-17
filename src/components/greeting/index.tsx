@@ -1,25 +1,34 @@
 import styles from './index.module.css';
-
-import weddingBackground from '@/assets/image/wedding_background.jpg';
-
+import  welcome from '../../assets/image/welcome1.jpg';
 
 const Greeting = () => {
     return (
         <div className={styles.container}>
-            <div className={styles.imageAreaGuide}>
-                <img src={weddingBackground} alt="wedding background" className={styles.backgroundImage}/>
-                <div className={styles.nameOverlay}>
-                    <span>이준서</span>
-                    <span>김은재</span>
+            {/* 9:16 비율을 강제하고 요소를 위아래(세로)로 정렬할 카드 프레임 */}
+            <div className={styles.cardFrame}>
+
+                {/* 1. 이미지 영역 */}
+                <div className={styles.imageWrapper}>
+                    <img
+                        src={welcome}
+                        alt="wedding"
+                        className={styles.contentImage}
+                    />
                 </div>
-                <div className={styles.informationOverlay}>
-                    <p>
-                        2025.10.18 SAT PM 02:30
-                    </p>
-                    <p>
-                        메종 드 프리미어 그랜드홀
-                    </p>
+
+                {/* 2. 텍스트 영역 */}
+                <div className={styles.infoArea}>
+                    <div className={styles.names}>
+                        <span>김준엽</span>
+                        <span className={styles.divider}>|</span>
+                        <span>최희은</span>
+                    </div>
+                    <div className={styles.details}>
+                        <p className={styles.date}>2026.11.22 SUN PM 12:00</p>
+                        <p className={styles.location}>코트야드 메리어트 서울 보타닉 파크 Forest Ballroom</p>
+                    </div>
                 </div>
+
             </div>
         </div>
     );

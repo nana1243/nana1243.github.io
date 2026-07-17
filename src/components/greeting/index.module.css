@@ -1,3 +1,4 @@
+/* 1. 전체 화면 배경 및 중앙 정렬 */
 .container {
     width: 100%;
     height: 100dvh;
@@ -8,60 +9,83 @@
     overflow: hidden;
 }
 
-.imageAreaGuide {
+/* [수정] 카드 프레임: 비율 강제를 없앱니다. */
+.cardFrame {
     position: relative;
-    max-width: 100%;
-    max-height: 100%;
-    aspect-ratio: 9 / 16;
-    display: flex;
-}
-
-/* 실제 배경 이미지 스타일 */
-.backgroundImage {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
+    max-width: 450px;       /* PC에서 볼 때 너비 제한 */
+    /* aspect-ratio: 9 / 16;  <- 이 줄을 과감히 삭제하거나 주석 처리하세요! */
+    height: auto;           /* 높이는 내용물에 따라 자동으로 늘어나게 설정 */
+    max-height: 100dvh;     /* 전체 화면 높이를 넘지는 않게 제한 */
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow-y: auto;       /* 내용이 너무 길어지면 카드 내부에서 스크롤 되도록 설정 */
 }
 
-/* 이름 오버레이 스타일 */
-.nameOverlay {
-    position: absolute;
-    bottom: 19.5%; 
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 50%;
+/* [수정] 이미지 영역: 고정 높이를 없앱니다. */
+.imageWrapper {
+    width: 100%;
+    height: auto;           /* 이미지 자체 높이에 맞춥니다. */
+}
+
+/* [수정] 이미지 자체 스타일: object-fit을 제거하여 원본 비율로 보여줍니다. */
+.contentImage {
+    width: 100%;
+    height: auto;           /* 원본 비율 유지 */
+    display: block;
+    /* object-fit: cover;  <- 이 줄도 삭제하거나 주석 처리하세요! */
+}
+
+/* [수정] 정보 텍스트 영역: justify-content 제거 */
+.infoArea {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    /* justify-content: center; <- 이 줄 삭제: 글자가 맨 아래로 내려가는 것 방지 */
     align-items: center;
+    text-align: center;
+    padding: 30px 20px;     /* 위아래 좌우 여백 */
+}
+
+
+/* 신랑 신부 이름 */
+.names {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
     color: #444;
     font-size: 1.4rem;
     font-family: 'Gowun Batang', serif;
     white-space: nowrap;
+    margin-bottom: 24px;
 }
 
-.informationOverlay {
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    width: 100%;
+/* 이름 사이의 구분선 (|) */
+.divider {
+    color: #ccc;
+    font-size: 1.2rem;
+}
+
+/* 상세 일시 및 장소 */
+.details {
     color: #444;
     font-family: 'Gowun Batang', serif;
     font-size: 1rem;
+    line-height: 1.7;
 }
 
-/* 정보 오버레이 내부 p 태그 스타일 */
-.informationOverlay p {
+.details p {
     margin: 0;
-    line-height: 1.5;
 }
 
-.audioPlayer {
-    position: absolute;
-    top: 10vh;
-    right: 3vh;
-    z-index: 10;
+.date {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.location {
+    font-size: 0.95rem;
 }
