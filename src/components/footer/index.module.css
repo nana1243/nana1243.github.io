@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+/* 푸터 전체 영역 */
+.footerContainer {
+    width: 100%;
+    padding: 40px 20px 50px 20px;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* 신랑 신부 저작권 문구 */
+.copyright {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 0.75rem;
+    color: #a0a0a0;
+    margin: 10px 0 4px 0;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+/* 개발자 크레딧 라인 */
+.developer {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 0.7rem;
+    color: #b0b0b0;
+    margin: 0;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+/* 깃허브 링크 스타일 */
+.githubLink {
+    color: #8c8276; /* 청첩장 포인트 브라운 컬러로 매칭 */
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.2s, text-decoration 0.2s;
+}
+
+/* 마우스를 올리거나 터치했을 때 밑줄 처리 */
+.githubLink:hover {
+    color: #7a6f63;
+    text-decoration: underline;
+}

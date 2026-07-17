@@ -6,6 +6,7 @@ import Gallery from "./components/gallery";
 import Location from "./components/location";
 import Layout from "./components/layout/Layout";
 import Account from "./components/account";
+import Footer from "./components/footer";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
             <Account/>
             <Gallery/>
             <Location/>
+            <Footer/>
         </Layout>
     )
 }
