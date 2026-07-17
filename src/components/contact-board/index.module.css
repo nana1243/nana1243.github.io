@@ -1,4 +1,34 @@
-.container{
-    flex-direction: column;
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
 
+/* 보드 컨테이너 (세로 정렬 및 중앙 정렬) */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* 신랑/신부 본인 영역 하단 여백 */
+.mainContact {
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+/* '신랑측 혼주' 텍스트 서체 및 크기 지정 */
+.familyTitle {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #8c8276;       /* 차분한 웜 브라운 그레이 포인트 */
+    letter-spacing: 1px;
+    margin: 12px 0 16px 0;
+    text-align: center;
+}
+
+/* 혼주 리스트 래퍼 (부모와 자식 간의 정렬 간격 유지) */
+.familyList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* 혼주가 여러 명일 때 세로 간격 */
 }
