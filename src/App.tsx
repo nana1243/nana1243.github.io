@@ -13,7 +13,6 @@ function App() {
             <Greeting/>
             <Information/>
             <Contact/>
-            {/*<Attendance/>*/}
             <Account/>
             <Gallery/>
             <Location/>

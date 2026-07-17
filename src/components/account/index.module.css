@@ -1,39 +1,35 @@
+/* 폰트 임포트 */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+/* 1. 카드를 감싸는 회색 배경 영역 */
 .container {
     width: 100%;
-    background-color: #f9f9f9;
+    padding: 30px 20px;       /* 다른 카드들과의 위아래 간격 통일 */
+    background-color: #f0f0f0; /* 배경 회색 */
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #666666;
-    padding-top: 40px;
-    flex-direction: column;
-    padding-bottom: 30px;
-
+    box-sizing: border-box;
 }
 
-/* 계좌 한 줄 레이아웃 */
-.accountRow {
+/* 2. 실제 하얀색 카드 영역 */
+.cardFrame {
+    width: 100%;
+    max-width: 450px;          /* 다른 카드들과 크기 완전 통일 */
+    background-color: #ffffff;
+    padding: 50px 24px;        /* 카드 내부 여백 통일 */
+    border-radius: 8px;        /* 둥근 모서리 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* 부드러운 그림자 */
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 16px 0;
-    border-bottom: 1px solid #f0f0f0;
-    width: 100%; /* 너비 확보 */
+    box-sizing: border-box;
 }
 
-.accountRow:last-child {
-    border-bottom: none;
-}
-
-/* 계좌 정보 텍스트 정렬 */
-.accountInfo {
+/* 3. 아코디언들을 감싸는 전체 너비 영역 */
+.accordionWrapper {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 6px;
-}
-
-/* 은행 이름 간격만 유지 */
-.bankName {
-    color: #888888;
-    margin-right: 8px;
+    gap: 12px;                 /* 아코디언 아이템 간의 간격 */
 }
