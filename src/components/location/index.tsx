@@ -1,5 +1,4 @@
 import styles from './index.module.css'
-import Typography from "@mui/material/Typography";
 import WeddingMap from "../map/index";
 import { LOCATION, LOCATION_CONTACT } from "../../constants/location";
 import Button from "@mui/material/Button";

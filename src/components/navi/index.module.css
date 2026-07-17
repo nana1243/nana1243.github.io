@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+/* 1. 내비 버튼들을 감싸는 영역 */
+.naviContainer {
+    width: 100%;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eae7e4; /* 내비 버튼과 하단 안내 텍스트 사이 구분선 */
+}
+
+/* 2. 교통 정보 컨테이너 */
+.infoContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left; /* 안내 문구는 정갈하게 왼쪽 정렬 */
+}
+
+/* 3. 개별 교통 정보 섹션 */
+.infoSection {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 14px;
+}
+
+/* 마지막 항목을 제외하고 은은한 밑줄 추가 */
+.infoSection:not(:last-child) {
+    border-bottom: 1px dashed #eae7e4;
+}
+
+/* 4. 교통 정보 소제목 (명조체 통일) */
+.infoTitle {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #8c8276; /* 고급스러운 브라운/베이지 포인트 컬러 */
+    letter-spacing: 1px;
+}
+
+/* 5. 교통 정보 본문 내용 (명조체 통일) */
+.infoDesc {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 0.85rem;
+    color: #555555;
+    line-height: 1.6;
+    word-break: keep-all;
+}
