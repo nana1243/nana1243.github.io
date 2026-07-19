@@ -7,13 +7,12 @@ const Layout = ({children}) => {
             <Box
                 sx={{
                     position: 'fixed',
-                    top: 0,
+                    top: '12px',
                     right: '20px',
-                    width: '100%',
                     zIndex: 9999,
                     display: 'flex',
-                    justifyContent: 'right',
-                    py: 1.3,
+                    justifyContent: 'center',
+                    alignItems: 'center',
                 }}
             >
                 <AudioPlayer/>
