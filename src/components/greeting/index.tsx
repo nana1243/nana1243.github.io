@@ -25,7 +25,8 @@ const Greeting = () => {
                     </div>
                     <div className={styles.details}>
                         <p className={styles.date}>2026.11.22 SUN PM 12:00</p>
-                        <p className={styles.location}>코트야드 메리어트 서울 보타닉 파크 Forest Ballroom</p>
+                        <p className={styles.location}>코트야드 메리어트 서울 보타닉 파크</p>
+                        <p className={styles.location}>Forest Ballroom 2F</p>
                     </div>
                 </div>
 
