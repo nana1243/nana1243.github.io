@@ -8,6 +8,8 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    /* [추가] 접고 펼쳐질 때 배경 영역이 자연스럽게 반응하도록 트랜지션 추가 */
+    transition: all 0.3s ease;
 }
 
 /* 2. 하얀색 카드 영역 */
@@ -22,6 +24,13 @@
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
+
+    /*
+      [추가/수정] 높이 제한을 완전히 해제하여
+      사진이 9개 이상으로 늘어나는 만큼 카드가 아래로 자연스럽게 커집니다.
+    */
+    height: auto;
+    max-height: none;
 }
 
 /* 3. 영문 타이틀 스타일 일치 */
@@ -61,4 +70,32 @@
 
 .imageWrapper img:hover {
     transform: scale(1.03);               /* 마우스 올렸을 때 미세한 확대 효과 */
+}
+
+/* 6. [신규 추가] 더보기 / 접기 버튼 스타일 */
+.moreButton {
+    width: 100%;
+    max-width: 150px;           /* 버튼이 너무 펑퍼짐해지지 않게 제한 */
+    margin-top: 28px;           /* 사진 그리드 영역과의 깔끔한 간격 */
+    padding: 10px 16px;
+    background-color: transparent;
+    border: 1px solid #e2dbd5;  /* 타이틀 색상 계열과 어울리는 은은한 테두리 */
+    border-radius: 4px;
+    color: #7a7065;             /* 부드러운 브라운-그레이 톤 채택 */
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;         /* 카드 프레임의 정중앙 배치 보장 */
+    transition: all 0.2s ease;
+}
+
+/* 버튼에 마우스 올렸을 때 액션 효과 */
+.moreButton:hover {
+    background-color: #fcfbfa;
+    border-color: #c4b9ae;
+    color: #574e45;
 }
