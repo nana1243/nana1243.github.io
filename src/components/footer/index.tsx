@@ -1,29 +1,69 @@
+import {useEffect} from 'react';
 import styles from './index.module.css';
 import Button from '@mui/material/Button';
 import ShareIcon from '@mui/icons-material/Share';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import Stack from '@mui/material/Stack';
 
+declare global {
+    interface Window {
+        Kakao: any;
+    }
+}
 const Footer = () => {
-    // 🔗 링크 복사하기 함수
+    // 1. 카카오 SDK 초기화
+    useEffect(() => {
+        if (window.Kakao && !window.Kakao.isInitialized()) {
+            window.Kakao.init('52b6138a59a079de300263322ddb290f');
+        }
+    }, []);
+
+
     const handleCopyLink = () => {
         navigator.clipboard.writeText(window.location.href)
             .then(() => alert('청첩장 링크가 복사되었습니다.'))
             .catch((err) => console.error('링크 복사 실패:', err));
     };
 
-    // 💬 카카오톡 공유 함수 (Kakao SDK 연동 전 임시 확인용 알림)
+    // 💬 카카오톡 공유 함수
     const handleKakaoShare = () => {
-        alert('카카오톡 공유 기능 연동 영역입니다.');
+        if (!window.Kakao) {
+            alert('카카오톡 SDK를 불러오지 못했습니다.');
+            return;
+        }
+
+        const shareUrl = window.location.href;
+
+        window.Kakao.Share.sendDefault({
+            objectType: 'feed',
+            content: {
+                title: '준엽 ❤ 희은 소중한 날에 초대를 보냅니다.',
+                description: '저희 두 사람의 새로운 시작을 함께 축복해 주세요.',
+                imageUrl: 'https://nana1243.github.io/welcome.jpg',
+                link: {
+                    mobileWebUrl: shareUrl,
+                    webUrl: shareUrl,
+                },
+            },
+            buttons: [
+                {
+                    title: '청첩장 보러가기',
+                    link: {
+                        mobileWebUrl: shareUrl,
+                        webUrl: shareUrl,
+                    },
+                },
+            ],
+        });
     };
 
     return (
         <div className={styles.footerContainer}>
             {/* 1. 하객들을 위한 공유 버튼 영역 */}
-            <Stack direction="row" spacing={1.5} justifyContent="center" sx={{ mb: 3 }}>
+            <Stack direction="row" spacing={1.5} justifyContent="center" sx={{mb: 3}}>
                 <Button
                     variant="outlined"
-                    startIcon={<ShareIcon sx={{ fontSize: '14px !important' }} />}
+                    startIcon={<ShareIcon sx={{fontSize: '14px !important'}}/>}
                     onClick={handleKakaoShare}
                     sx={{
                         borderColor: '#eae7e4',
@@ -43,7 +83,7 @@ const Footer = () => {
                 </Button>
                 <Button
                     variant="outlined"
-                    startIcon={<ContentCopyIcon sx={{ fontSize: '14px !important' }} />}
+                    startIcon={<ContentCopyIcon sx={{fontSize: '14px !important'}}/>}
                     onClick={handleCopyLink}
                     sx={{
                         borderColor: '#eae7e4',
