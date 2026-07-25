@@ -4,7 +4,7 @@ import IconButton from '@mui/material/IconButton';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseIcon from '@mui/icons-material/Pause';
 
-import audioFile from '@/assets/audio/blueming.mp3';
+import audioFile from '@/assets/audio/Drama.mp3';
 import { useAudioAutoPlay } from "../../hooks/useAudioAutoPlay";
 
 const AudioPlayer = () => {
