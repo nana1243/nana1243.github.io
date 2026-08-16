@@ -3,7 +3,7 @@ import styles from './index.module.css';
 const Information = () => {
 
     const greetingLines = [
-        "봄을 꽃을 피우고,",
+        "봄은 꽃을 피우고,",
         "여름이 푸르름을 더하듯",
         "저희도 서로의 곁에서",
         "아름다운 계절을 만들어가려 합니다.",
