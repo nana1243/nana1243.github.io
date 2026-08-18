@@ -20,6 +20,7 @@ const ContactBoard = (props: ContactBoardProps) => {
             <div className={styles.mainContact}>
                 <ContactItem
                     title={contactInfo.title}
+                    name={contactInfo.name}
                     phoneNumber={contactInfo?.phoneNumber}
                 />
             </div>

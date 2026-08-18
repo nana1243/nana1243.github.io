@@ -1,10 +1,12 @@
 const CONTACT_BRIDE_GROOM_INFO = {
     groom: {
         title: '신랑',
+        name: '김준엽',
         phoneNumber: '010-6247-6929',
     },
     bride: {
         title: '신부',
+        name: '최희은',
         phoneNumber: '010-2905-1070',
     }
 
