@@ -1,4 +1,4 @@
-import { LOCATION_CONTACT, LOCATION_NAVI_URL, NAVI_ICONS, NAVI_LABELS, WEB_NAVI_URL } from "../../constants/location";
+import {LOCATION_CONTACT, LOCATION_NAVI_URL, NAVI_ICONS, NAVI_LABELS, WEB_NAVI_URL} from "../../constants/location";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import styles from './index.module.css';
@@ -10,10 +10,16 @@ const LocationInfo = () => {
             <div className={styles.infoSection}>
                 <span className={styles.infoTitle}>버스 안내</span>
                 <p className={styles.infoDesc}>
-                    강서07, 931, 6642, 6645, 6648 마곡나루역5번출구.서울식물원 정류장 하차
+                    마곡나루역 하차 · 지선 6642
                 </p>
-            </div>
+                <p className={styles.infoDesc}>
+                    마곡나루역 1번 출구 하차 · 지선 6645, 6648
+                </p>
+                <p className={styles.infoDesc}>
+                    마곡나루역 1번 출구 하차 · 마을 강서05-1
+                </p>
 
+            </div>
             {/* 자가용 안내 */}
             <div className={styles.infoSection}>
                 <span className={styles.infoTitle}>자가용 안내</span>
@@ -26,7 +32,10 @@ const LocationInfo = () => {
             <div className={styles.infoSection}>
                 <span className={styles.infoTitle}>지하철 안내</span>
                 <p className={styles.infoDesc}>
-                    9호선·공항철도 마곡나루역 3번 출구에서 서울식물원 방향으로 150m
+                    9호선 마곡나루역 2번 출구 도보 3분
+                </p>
+                <p className={styles.infoDesc}>
+                    공항철도 마곡나루역 3번 출구 도보 3분
                 </p>
             </div>
 
@@ -34,18 +43,19 @@ const LocationInfo = () => {
             <div className={styles.infoSection}>
                 <span className={styles.infoTitle}>주차 안내</span>
                 <p className={styles.infoDesc}>
-                    호텔 내 지하 주차장 이용 (하객 무료 주차)
+                    호텔 로비 정산 등록 시 3시간 무료
                 </p>
             </div>
 
             {/* 피로연 안내 */}
             <div className={styles.infoSection}>
-                <span className={styles.infoTitle}>피로연 안내</span>
+                <span className={styles.infoTitle}>식사 안내</span>
                 <p className={styles.infoDesc}>
                     지상 1층 가든 키친 뷔페
                 </p>
             </div>
         </div>
+
     );
 }
 
@@ -68,7 +78,7 @@ const Navi = () => {
     };
 
     return (
-        <div style={{ width: '100%' }}>
+        <div style={{width: '100%'}}>
             <div className={styles.naviContainer}>
                 <Stack direction="row" spacing={1.5} justifyContent="center">
                     {naviLists.map((navi) => (
@@ -79,7 +89,7 @@ const Navi = () => {
                                 <img
                                     src={NAVI_ICONS[navi as keyof typeof NAVI_ICONS]}
                                     alt={navi}
-                                    style={{ width: 16, height: 16, borderRadius: '4px' }}
+                                    style={{width: 16, height: 16, borderRadius: '4px'}}
                                 />
                             }
                             onClick={() => handleNaviClick(navi as keyof typeof LOCATION_NAVI_URL)}
@@ -102,7 +112,7 @@ const Navi = () => {
                     ))}
                 </Stack>
             </div>
-            <LocationInfo />
+            <LocationInfo/>
         </div>
     );
 };
