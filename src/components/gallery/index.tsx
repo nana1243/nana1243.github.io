@@ -1,12 +1,13 @@
-import image1 from '../../assets/image/image1.png';
-import image2 from '../../assets/image/image2.png';
-import image3 from '../../assets/image/image3.png';
-import image4 from '../../assets/image/image4.png';
-import image5 from '../../assets/image/image5.png';
-import image6 from '../../assets/image/image6.png';
-import image7 from '../../assets/image/image7.png';
-import image8 from '../../assets/image/image8.png';
-import image9 from '../../assets/image/image9.png';
+import image1 from '../../assets/image/image1.jpg';
+import image2 from '../../assets/image/image2.jpg';
+import image3 from '../../assets/image/image3.jpg';
+import image4 from '../../assets/image/image4.jpg';
+import image5 from '../../assets/image/image5.jpg';
+import image6 from '../../assets/image/image6.jpg';
+import image7 from '../../assets/image/image7.jpg';
+import image8 from '../../assets/image/image8.jpg';
+import image9 from '../../assets/image/image9.jpg';
+import image10 from '../../assets/image/image10.jpg';
 
 import styles from './index.module.css';
 import Lightbox from 'yet-another-react-lightbox';
@@ -15,7 +16,7 @@ import { useState } from "react";
 
 const Gallery = () => {
     const INITIAL_COUNT = 9;
-    const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9,image5, image5, image5,image5];
+    const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, ];
 
     const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
 
