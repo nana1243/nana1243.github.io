@@ -1,22 +1,29 @@
-import image1 from '../../assets/image/image1.jpg';
-import image2 from '../../assets/image/image2.jpg';
-import image3 from '../../assets/image/image3.jpg';
-import image4 from '../../assets/image/image4.jpg';
-import image5 from '../../assets/image/image5.jpg';
-import image6 from '../../assets/image/image6.jpg';
-import image7 from '../../assets/image/image7.jpg';
-import image8 from '../../assets/image/image8.jpg';
-import image9 from '../../assets/image/image9.jpg';
-import image10 from '../../assets/image/image10.jpg';
+import image1 from '../../assets/image/thumb/image1.webp';
+import image2 from '../../assets/image/thumb/image2.webp';
+import image3 from '../../assets/image/thumb/image3.webp';
+import image4 from '../../assets/image/thumb/image4.webp';
+import image5 from '../../assets/image/thumb/image5.webp';
+import image6 from '../../assets/image/thumb/image6.webp';
+import image7 from '../../assets/image/thumb/image7.webp';
+import image8 from '../../assets/image/thumb/image8.webp';
+// import image9 from '../../assets/image/thumb/image9.webp';
+import image10 from '../../assets/image/thumb/image10.webp';
+import image11 from '../../assets/image/thumb/image11.webp';
+// import image12 from '../../assets/image/thumb/image12.webp';
+import image13 from '../../assets/image/thumb/image13.webp';
+import image14 from '../../assets/image/thumb/image14.webp';
+import image15 from '../../assets/image/thumb/image15.webp';
+import image16 from '../../assets/image/thumb/image16.webp';
 
 import styles from './index.module.css';
 import Lightbox from 'yet-another-react-lightbox';
 import "yet-another-react-lightbox/styles.css";
-import { useState } from "react";
+import {useState} from "react";
 
 const Gallery = () => {
+    console.count('🔥 Gallery render');
     const INITIAL_COUNT = 9;
-    const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, ];
+    const images = [image1, image2, image3, image4, image5, image6, image7, image8, image10, image11, image13, image14, image15, image16];
 
     const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
 
@@ -31,7 +38,7 @@ const Gallery = () => {
 
             // 💡 접었을 때 화면이 팅기지 않도록 갤러리 타이틀 위치로 스크롤을 부드럽게 올려주는 센스
             const element = document.getElementById('gallery-section');
-            if (element) element.scrollIntoView({ behavior: 'smooth' });
+            if (element) element.scrollIntoView({behavior: 'smooth'});
         }
     };
 
@@ -52,7 +59,12 @@ const Gallery = () => {
                                 setOpen(true);
                             }}
                         >
-                            <img src={img} alt={`gallery-${idx}`} />
+                            <img
+                                src={img}
+                                alt={`gallery-${idx}`}
+                                loading="lazy"
+                                decoding="async"
+                            />
                         </div>
                     ))}
                 </div>
@@ -69,12 +81,12 @@ const Gallery = () => {
                 )}
 
                 <Lightbox
-                    styles={{ root: { "--yarl__color_backdrop": "rgba(0, 0, 0, .8)" } }}
+                    styles={{root: {"--yarl__color_backdrop": "rgba(0, 0, 0, .8)"}}}
                     open={open}
                     close={() => setOpen(false)}
-                    slides={images.map(img => ({ src: img }))}
+                    slides={images.map(img => ({src: img}))}
                     index={index}
-                    on={{ view: ({ index: currentIndex }) => setIndex(currentIndex) }}
+                    on={{view: ({index: currentIndex}) => setIndex(currentIndex)}}
                 />
             </div>
         </div>
