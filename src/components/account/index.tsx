@@ -1,5 +1,4 @@
 import styles from './index.module.css';
-import account from '@/assets/image/account.png';
 import Typography from "@mui/material/Typography";
 import ACCOUNT_DATA from "../../constants/account";
 import AccordionItem from "./AccordionItem";
