@@ -18,7 +18,7 @@ interface AccordionItemProps {
 }
 
 const AccordionItem = ({ type, title, accounts }: AccordionItemProps) => {
-    const [expanded, setExpanded] = useState<boolean>(type === 'open');
+    const [expanded, setExpanded] = useState<boolean>(type === 'false');
 
     const handleChange = (event: React.SyntheticEvent, isExpanded: boolean) => {
         setExpanded(isExpanded);
