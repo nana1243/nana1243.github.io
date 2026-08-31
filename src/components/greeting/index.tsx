@@ -1,5 +1,5 @@
 import styles from './index.module.css';
-import  welcome from '../../assets/image/welcome1.jpg';
+import  welcome from '../../assets/image/thumb/welcome1.webp';
 
 const Greeting = () => {
     return (
