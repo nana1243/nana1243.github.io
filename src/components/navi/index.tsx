@@ -54,6 +54,14 @@ const LocationInfo = () => {
                     지상 1층 가든 키친 뷔페
                 </p>
             </div>
+            {/* 화한 안내 */}
+            <div className={styles.infoSection}>
+                <span className={styles.infoTitle}>화환 안내</span>
+                <p className={`${styles.infoDesc}`}>
+                    축하 화환은 정중히 사양합니다.마음만 감사히 받겠습니다.
+                </p>
+            </div>
+
         </div>
 
     );

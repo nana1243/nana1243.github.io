@@ -46,3 +46,7 @@
     line-height: 1.6;
     word-break: keep-all;
 }
+.infoDesc.flowerNotice {
+    color: #65574b;
+    font-weight: 600;
+}
